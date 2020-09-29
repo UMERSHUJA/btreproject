@@ -1,0 +1,7 @@
+1) check the file ".gitignore"
+2) git init
+3) git add .
+4) git commit -m 'Initial commit'
+5) create a repository copy the following commands for remotely access
+    "git remote add origin https://github.com/UMERSHUJA/btreproject.git"
+    'git push -u origin master'

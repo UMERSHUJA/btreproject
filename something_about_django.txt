@@ -1,5 +1,6 @@
 1. install django
 pip install django
+pip install autopep8
 
 2. project option
 django-admin
@@ -7,4 +8,51 @@ django-admin
 3. create project
 django-admin startproject project_name .
 
-4. 
+4. create app
+python manange.py startapp app_name
+4.1) include app in setting file
+'app_name.apps.class_name
+
+5. configure postgresql with Django
+5.1) install some driver:
+    psycopg2, psycopg2-binary
+5.2) make changes in settings.py
+move to the database, 
+put the stuff like this ...
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'btredb',
+            'USER': 'postgre',
+            'PASSWORD': 'test',
+            'HOST': 'localhost'
+        }
+    }   
+
+6) migrations(is a file which tells actually what to do; related to the db)
+6.1) run the command.
+    python manage.py migrate
+6.2) create a file for all migrations
+    python manage.py makemigrations
+6.3) to view the query
+    python manage.py sqlmigrate listings 0001    
+6.4) for migratation...
+    step 6.2, then step 6.1,
+
+7) create super user for administration
+python manage.py createsuperuser
+localhost:8000/admin
+
+
+4. create repository in github ...
+4.1) visit gitignore.io
+4.2) type the technology as "django", "flask"  
+4.3) copy the api and paste into the file (.gitignore)
+4.4) run the command ("git init")
+4.5) your parent directory should be where all the above 3 steps occur.
+
+5. create app
+python manage.py startapp app_name      
+
+6. add the new app in the installed app list
+project_name --> settings.py -- > installed_app[]
