@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '&)tw$sotxlf%nneuz(jgnayv@cd72a%)%c-(m=x4phg5bswj1o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['heroku-app-356.herokuapp.com']
 
 
 # Application definition
@@ -150,3 +150,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'umershuja12@gmail.com'
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = 'True'
+
+try:
+    from.local_setting import *
+except ImportError:
+    pass
